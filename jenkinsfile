@@ -8,6 +8,7 @@ pipeline {
 		   println "Building AMI from the packer script.."
 		   println ""
 		   sh "pwd"
+		   sh "packer --version"
 		}
 	}
     }
