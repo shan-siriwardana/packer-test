@@ -1,0 +1,21 @@
+{
+  "variables": {},
+  "builders": [{
+     "type": "amazon-ebs",
+     "region": "us-east-2",
+     "source_ami": "ami-03d64741867e7bb94",
+     "instance_type": "t2.micro",
+     "ssh_username": "ec2-user",
+     "ami_name": "packer-test {{timestamp}}"
+  }],
+  "provisioners": [
+   {
+      "type": "ansible",
+      "extra_arguments" : [
+        "-vvv"
+      ],
+      "user": "ec2-user",
+      "playbook_file": "./playbook.yml"
+   }
+  ]
+}
