@@ -7,8 +7,7 @@ pipeline {
 		steps {
 		   println "Building AMI from the packer script.."
 		   println ""
-		   sh "pwd"
-		   sh "/usr/local/bin/packer --version"
+		   sh "/usr/local/bin/packer build build_packer_ami.json"
 		}
 	}
     }
