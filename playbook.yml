@@ -1,0 +1,13 @@
+- name: 'Install Softwares'
+  hosts: default
+  become: true
+
+  tasks:
+  - name: install Apache
+    ansible.builtin.package:
+      name: 'httpd'
+      state: present
+  - name: install Nginx
+    ansible.builtin.package:
+      name: 'nginx'
+      state: present
