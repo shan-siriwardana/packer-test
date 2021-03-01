@@ -1,13 +1,13 @@
 pipeline {
     agent {
-        label "master"
+        label "slave1"
     }
     stages {
 	stage('Build AMI') {
 		steps {
 		   println "Building AMI from the packer script.."
 		   println ""
-		   sh "/usr/local/bin/packer build build_packer_ami.json"
+		   sh "packer build build_packer_ami.json"
 		}
 	}
     }
