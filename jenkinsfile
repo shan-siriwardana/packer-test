@@ -1,0 +1,19 @@
+pipeline {
+    agent {
+        label "master"
+    }
+    stages {
+      stage('Build AMI') {
+        steps {
+           println "Building AMI from the packer script.."
+           println ""
+           sh "packer build build_packer_ami.json"
+        }
+      }
+    }
+		post {      
+			always { 
+				//cleanWs()
+			}
+    }
+}
