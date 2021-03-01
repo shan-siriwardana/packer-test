@@ -7,7 +7,7 @@ pipeline {
 		steps {
 		   println "Building AMI from the packer script.."
 		   println ""
-		   sh 'packer build build_packer_ami.json'
+		   sh "packer build build_packer_ami.json"
 		}
 	}
     }
