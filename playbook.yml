@@ -3,7 +3,7 @@
   become: true
 
   tasks:
-  - name: install httpd
+  - name: install httpd web server
     ansible.builtin.package:
       name: 'httpd'
       state: present
