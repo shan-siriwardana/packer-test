@@ -8,7 +8,7 @@ pipeline {
 		   println "Building AMI from the packer script.."
 		   println ""
 		   sh "aws ec2 describe-instances --region us-east-2 --query 'Reservations[].Instances[].InstanceId'"
-		   //sh "packer build build_packer_ami.json"
+		   sh "packer build build_packer_ami.json"
 		}
 	}
     }
